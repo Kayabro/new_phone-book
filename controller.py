@@ -34,8 +34,10 @@ def start():
                 index = view.input_id()
                 name = manager_.get_name(index)
                 if view.confirm('удалить', name):
-                    manager_.delet_contact(index)
-
+                    manager_.delete_contact(index)
             case 8:
-                print('Досвидания')
+                if manager_.check_changes():
+                    if view.confirm_changes():
+                        manager_.save_file()
+                print('Досвидания!')
                 break

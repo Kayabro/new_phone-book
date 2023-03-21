@@ -63,3 +63,8 @@ def confirm(condition: str, name: str):
         return True
     else:
         return False
+
+
+def confirm_changes():
+    anwswer = input('У вас несохраненные изменения, хотите сохранить? (y/n)')
+    return True if anwswer == 'y' else False

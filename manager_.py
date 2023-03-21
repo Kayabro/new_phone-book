@@ -18,8 +18,8 @@ def open_file():
             new_contact['comment'] = new[2]
             phone_book.append(new_contact)
     old_book = deepcopy(phone_book)
-    print(phone_book)
-    print(old_book)
+    # print(phone_book)
+    # print(old_book)
 
 def get():
     global phone_book
@@ -62,7 +62,7 @@ def change_contact(ind: int, contact: dict):
     phone_book.insert(ind - 1, contact)
 
 
-def delet_contact(ind: int):
+def delete_contact(ind: int):
     global phone_book
     phone_book.pop(ind - 1)
 
@@ -74,3 +74,8 @@ def get_name(ind: int):
 
 def check_changes():
     global phone_book
+    global old_book
+    if phone_book != old_book:
+        return True
+    else:
+        return False
